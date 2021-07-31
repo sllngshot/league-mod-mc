@@ -20,6 +20,7 @@ build
 # other
 eclipse
 run
+BLOCKBENCH_MODELS
 
 # Files from Forge MDK
 forge*changelog.txt
