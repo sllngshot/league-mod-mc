@@ -1,0 +1,22 @@
+modLoader="javafml" #mandatory
+loaderVersion="[37,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="All rights reserved"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+[[mods]] #mandatory
+modId="league" #mandatory
+# ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
+version="${file.jarVersion}" #mandatory
+displayName="League of Legends mod" #mandatory
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="lol_icon.png" #optional
+credits="Thanks to nation for any art advice" #optional
+authors="sllngshot" #optional
+description='''
+Ever wanted to play League without actually having to play that god awful game?
+Well now you can! Introducing the minecraft league of legends mod! Now play as
+your favourite champions in minecraft, while not having to deal with actual league
+players.
+
+Enjoy.
+'''
