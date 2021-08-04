@@ -1,6 +1,5 @@
 package com.sllngshot.league.common.items;
 
-import com.sllngshot.league.core.init.ItemInit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -19,13 +18,25 @@ public class RengarWeapon extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 
         // Checks for player not on ground or rengar item not in main hand
-        if (!player.isOnGround()
-                || player.getMainHandItem() != ItemInit.RENGAR_WEAPON.get().getDefaultInstance()) {
-            return InteractionResultHolder.fail(player.getMainHandItem());
-        }
 
         //Add rengar jumping code here
-        player.moveTo(new Vec3(player.getX(), player.getY() + 5, player.getZ()));
+
+        Vec3 lookAngle = player.getLookAngle();
+        String lookAngleStr = "Look angle: " + Double.toString(lookAngle.x) + ", "
+                + Double.toString(lookAngle.y) + ", "
+                + Double.toString(lookAngle.z);
+
+
+        Vec3 currentPos = player.getPacketCoordinates();
+        String currentPosStr = "Current Coords: " + Double.toString(currentPos.x) + ", "
+                + Double.toString(currentPos.y) + ", "
+                + Double.toString(currentPos.z);
+
+        //RayCasting.getTargetedEntity(player.getPacketCoordinates(), player.getLookAngle(), level.getEntities());
+
+        System.out.println(lookAngleStr);
+        System.out.println(currentPosStr);
+
         return InteractionResultHolder.pass(player.getMainHandItem());
     }
 
